@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Feedback from '../Feedback/Feedback';
+
 
 // This is one of our simplest components
 // It doesn't have local state, so it can be a function component.
@@ -26,9 +26,10 @@ class Resources extends Component {
      {this.props.projectReducer.map((item)=>(
       <div key ={item.id}>
       <h3>{item.age_group}</h3>
-         <video key = {item.id} src ={item.video}/>
+   
+         <iframe key = {item.id} src = {item.video} />
        <ul>
-          {item.video}
+          
          <li>{item.resource1}</li>
          <li>{item.resource2}</li>
          <li>{item.resource3}</li>
@@ -38,7 +39,7 @@ class Resources extends Component {
       </div>
      ))}
      </div>
-     <Feedback />
+ 
     </>
     )
   }

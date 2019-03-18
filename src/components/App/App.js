@@ -16,6 +16,7 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
 import Resources from '../Resources/Resources';
+import Feedback from '../Feedback/Feedback';
 
 import './App.css';
 
@@ -56,7 +57,13 @@ class App extends Component {
               component={Resources}
             />
             {/* If none of the other routes matched, we will show a 404. */}
+            <ProtectedRoute
+              exact
+              path="/feedback"
+              component={Feedback}
+            />
             <Route render={() => <h1>404</h1>} />
+
           </Switch>
           <Footer />
         </div>
