@@ -27,7 +27,7 @@ class Resources extends Component {
       <div key ={item.id}>
       <h3>{item.age_group}</h3>
    
-         <iframe key = {item.id} src = {item.video} />
+         <iframe key = {item.id} src = {item.video} title = "infant video"/>
        <ul>
           
          <li>{item.resource1}</li>

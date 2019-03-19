@@ -17,6 +17,7 @@ import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
 import Resources from '../Resources/Resources';
 import Feedback from '../Feedback/Feedback';
+import Admin from '../Admin/Admin';
 
 import './App.css';
 
@@ -61,6 +62,11 @@ class App extends Component {
               exact
               path="/feedback"
               component={Feedback}
+            />
+            <ProtectedRoute
+              exact
+              path="/admin"
+              component={Admin}
             />
             <Route render={() => <h1>404</h1>} />
 
