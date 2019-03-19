@@ -22,10 +22,10 @@ import FilterListIcon from '@material-ui/icons/FilterList';
 import { lighten } from '@material-ui/core/styles/colorManipulator';
 
 
-
 // let counter = 0;
 function createData(username, rating, helpful, comments, id) {
     return { id: id, username, rating, helpful, comments };
+
 }
 
 function desc(a, b, orderBy) {
@@ -37,6 +37,7 @@ function desc(a, b, orderBy) {
     }
     return 0;
 }
+
 
 function stableSort(array, cmp) {
     const stabilizedThis = array.map((el, index) => [el, index]);
@@ -60,6 +61,7 @@ const rows = [
 ];
 
 class EnhancedTableHead extends React.Component {
+
     createSortHandler = property => event => {
         this.props.onRequestSort(event, property);
     };
@@ -224,7 +226,7 @@ const styles = theme => ({
 class EnhancedTable extends React.Component {
     state = {
         order: 'asc',
-        orderBy: 'feeling',
+        orderBy: 'username',
         selected: [],
         data: [],
         page: 0,
@@ -234,10 +236,16 @@ class EnhancedTable extends React.Component {
 
 
 
-    //DOM is ready
+
+
+    // DOM is ready
     componentDidMount() {
         // this.getFeedback();
         this.props.dispatch({type: 'FETCH_FEEDBACK'})
+        this.inputTableData();
+        // console.log('MOUNT TONY:', this.props.projectReducer);
+        // this.inputTableData();
+
     }
 
     // receive feedback array, map through and setState to 'data' property which will display values to table on DOM
@@ -254,6 +262,16 @@ class EnhancedTable extends React.Component {
     //         })
     //     });
     // }
+    inputTableData =()=>{
+        this.props.dispatch({ type: 'FETCH_FEEDBACK' })
+        console.log('tableDATA', this.props.projectReducer);
+        
+        const feedbackArray = this.props.projectReducer.map(item => createData(item.username, item.rating, item.helpful, item.comments, item.feedback_id))
+        this.setState({
+                data: feedbackArray,
+                selected: [],
+            })
+    }
 
     handleRequestSort = (event, property) => {
         const orderBy = property;
@@ -309,11 +327,16 @@ class EnhancedTable extends React.Component {
     isSelected = id => this.state.selected.indexOf(id) !== -1;
 
     render() {
+
         const { classes } = this.props;
         const { data, order, orderBy, selected, rowsPerPage, page } = this.state;
         const emptyRows = rowsPerPage - Math.min(rowsPerPage, data.length - page * rowsPerPage);
+        const reducer = this.props.projectReducer.data
+        
+
 
         return (
+
             <Paper className={classes.root}>
                 <EnhancedTableToolbar numSelected={selected.length} selectedID={selected} getFeedback={this.getFeedback} />
                 <div className={classes.tableWrapper}>
@@ -385,6 +408,7 @@ class EnhancedTable extends React.Component {
 EnhancedTable.propTypes = {
     classes: PropTypes.object.isRequired,
 };
+
 const mapReduxStateToProps = reduxState => {
     return reduxState;
 };
