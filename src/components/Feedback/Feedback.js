@@ -41,24 +41,44 @@ const styles = theme => ({
         width: 200,
     },
 });
+function createData(username, rating, helpful, comments, id) {
+    return { id: id, username, rating, helpful, comments };
 
+}
 
 class RadioButtons extends Component {
     state = {
         selectedValue: '',
         selectedValue2: '',
         selectedValue3: '',
+        user: this.props.user.id,
+        feedBackId: 20000,
     };
+
+    componentDidMount() {
+        // this.props.dispatch({type: 'FETCH_FEEDBACK'})
+        this.inputTableData();
+    }
+
+    inputTableData = () => {
+        this.props.dispatch({ type: 'FETCH_FEEDBACK' })
+        console.log('tableDATA', this.props.projectReducer);
+        // const feedbackArray = this.props.projectReducer.map(item => createData(item.username, item.score, item.helpful, item.comments, item.feedback_id))
+        // const idArray = Math.max(this.props.projectReducer.map(item => {
+        //     // item.feedback_id;
+        // }))
+        // console.log(idArray)
+    }
 
     handleSubmit = () => {
        console.log('handleSubmit', this.state);
        
         this.props.dispatch({ type: 'ADD_FEEDBACK', payload: this.state })
-        this.setState({
-            selectedValue: '',
-            selectedValue2: '',
-            selectedValue3: '',
-        })
+        // this.setState({
+        //     selectedValue: '',
+        //     selectedValue2: '',
+        //     selectedValue3: '',
+        // })
     }
 
     handleChange = event => {
