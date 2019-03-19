@@ -41,11 +41,25 @@ const styles = theme => ({
         width: 200,
     },
 });
+
+
 class RadioButtons extends Component {
     state = {
         selectedValue: '',
         selectedValue2: '',
+        selectedValue3: '',
     };
+
+    handleSubmit = () => {
+       console.log('handleSubmit', this.state);
+       
+        this.props.dispatch({ type: 'ADD_FEEDBACK', payload: this.state })
+        this.setState({
+            selectedValue: '',
+            selectedValue2: '',
+            selectedValue3: '',
+        })
+    }
 
     handleChange = event => {
         this.setState({ selectedValue: event.target.value });
@@ -54,6 +68,9 @@ class RadioButtons extends Component {
     handleHelpful = event => {
         this.setState({ selectedValue2: event.target.value });
     };
+    handleComments = event =>{
+        this.setState({ selectedValue3: event.target.value });
+    }
 
     render() {
         const { classes } = this.props;
@@ -138,16 +155,17 @@ class RadioButtons extends Component {
                         id="outlined-textarea"
                         label="Comments"
                         placeholder="Comments"
-                        multiline
+                        onChange= {this.handleComments}
                         className={classes.textField}
                         margin="normal"
                         variant="outlined"
                     />    
 
             </div>
-         
+                    <button onClick = {this.handleSubmit}>submit</button>
             </div>
             </Paper>
+            
         );
     }
 }

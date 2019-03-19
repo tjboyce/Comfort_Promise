@@ -5,6 +5,7 @@ import axios from 'axios';
 function* projectSaga () {
     yield takeEvery ('FETCH_INFO', fetchInfo);
     yield takeEvery ('FETCH_FEEDBACK', fetchFeedback)
+    yield takeEvery ('ADD_FEEDBACK', postFeedback)
 }
 
 function* fetchInfo() {
@@ -28,5 +29,14 @@ function* fetchFeedback (){
 }
 
 
+function* postFeedback(action) {
+    try {
+        console.log('postFeedback', action.payload);
+        yield axios.post('api/feedback', action.payload);
+        yield dispatch({ type: 'FETCH_FEEDBACK' });
+    } catch (error) {
+        console.log('post Saga error', error);
+    }
+}
 
 export default projectSaga;

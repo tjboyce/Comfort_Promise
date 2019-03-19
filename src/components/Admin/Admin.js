@@ -232,41 +232,18 @@ class EnhancedTable extends React.Component {
         page: 0,
         rowsPerPage: 10,
     };
-
-
-
-
-
-
-    // DOM is ready
+// DOM is ready
     componentDidMount() {
-        // this.getFeedback();
-        this.props.dispatch({type: 'FETCH_FEEDBACK'})
+       
+        // this.props.dispatch({type: 'FETCH_FEEDBACK'})
         this.inputTableData();
-        // console.log('MOUNT TONY:', this.props.projectReducer);
-        // this.inputTableData();
-
     }
-
-    // receive feedback array, map through and setState to 'data' property which will display values to table on DOM
-    // getFeedback = () => {
-    //     axios({
-    //         method: 'GET',
-    //         url: '/feedback'
-    //     }).then((response) => {
-    //         console.log(response.data);
-    //         const feedbackArray = response.data.map(item => createData(item.feeling, item.understanding, item.support, item.comments, item.id))
-    //         this.setState({
-    //             data: feedbackArray,
-    //             selected: [],
-    //         })
-    //     });
-    // }
+    
     inputTableData =()=>{
         this.props.dispatch({ type: 'FETCH_FEEDBACK' })
         console.log('tableDATA', this.props.projectReducer);
         
-        const feedbackArray = this.props.projectReducer.map(item => createData(item.username, item.rating, item.helpful, item.comments, item.feedback_id))
+        const feedbackArray = this.props.projectReducer.map(item => createData(item.username, item.score, item.helpful, item.comments, item.feedback_id))
         this.setState({
                 data: feedbackArray,
                 selected: [],
@@ -331,7 +308,7 @@ class EnhancedTable extends React.Component {
         const { classes } = this.props;
         const { data, order, orderBy, selected, rowsPerPage, page } = this.state;
         const emptyRows = rowsPerPage - Math.min(rowsPerPage, data.length - page * rowsPerPage);
-        const reducer = this.props.projectReducer.data
+        
         
 
 
@@ -369,10 +346,10 @@ class EnhancedTable extends React.Component {
                                                 <Checkbox checked={isSelected} />
                                             </TableCell>
                                             <TableCell style={{ width: '10%' }} align="right" >
-                                                {n.feeling}
+                                                {n.username}
                                             </TableCell>
-                                            <TableCell style={{ width: '10%' }} align="right">{n.understanding} </TableCell>
-                                            <TableCell style={{ width: '10%' }} align="right">{n.support}</TableCell>
+                                            <TableCell style={{ width: '10%' }} align="right">{n.rating} </TableCell>
+                                            <TableCell style={{ width: '10%' }} align="right">{n.helpful}</TableCell>
                                             <TableCell style={{ width: '60%' }} align="left">{n.comments}</TableCell>
                                         </TableRow>
                                     );
