@@ -16,28 +16,35 @@ router.get('/', rejectUnauthenticated, (req, res) => {
     })
 });
 
-router.post('/', (req, res) => {
-    console.log('req.body', req.body);
+router.post('/', rejectUnauthenticated, (req, res) => {
+    console.log('req.body on post', req.body);
     
     const newFeedback = req.body;
-    const queryText = `WITH "feedback" AS (
-	INSERT INTO "feedback" ("score", "helpful", "comments")
-	VALUES ($1, $2, $3)
-	)
-INSERT INTO "join" ("user_id")
-VALUES ($4)
-;`
+    const queryText = `INSERT INTO "feedback" ("score", "helpful", "comments")
+	VALUES ($1, $2, $3) RETURNING id;`
+  
     const queryValues = [
         newFeedback.selectedValue,
         newFeedback.selectedValue2,
         newFeedback.selectedValue3,
-        newFeedback.user,
+       
     ];
     pool.query(queryText, queryValues)
-        .then(() => { res.sendStatus(201); })
-        .catch((error) => {
+        .then( (res) => { 
+            console.log(res);
+           const feedbackId = res.rows[0].id;
+            console.log('ALLY', feedbackId);
+            const queryText = `INSERT INTO "join" ("feedback_id", "user_id")VALUES ($1, $2)`
+            const values = [feedbackId, newFeedback.user ]
+            pool.query(queryText, values)
+            // .then((res)=>{
+            //     res.sendStatus (201)
+            // })
+         .catch((error) => {
             console.log('Error completing POST query', error);
             res.sendStatus(500);
         });
+       
 });
+})
 module.exports = router;

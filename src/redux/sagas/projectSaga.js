@@ -22,7 +22,7 @@ function* fetchFeedback (){
     console.log('fetchInfo was hit');
     try {
         const feedbackResponse = yield axios.get('/api/feedback');
-        yield dispatch({ type: 'GET_INFO', payload: feedbackResponse.data })
+        yield dispatch({ type: 'GET_FEEDBACK', payload: feedbackResponse.data })
     } catch (error) {
         console.log('saga error with your fetch feedback');
     }

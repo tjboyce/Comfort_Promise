@@ -236,14 +236,14 @@ class EnhancedTable extends React.Component {
     componentDidMount() {
        
         // this.props.dispatch({type: 'FETCH_FEEDBACK'})
-        this.inputTableData();
+         this.inputTableData();
     }
     
     inputTableData =()=>{
         this.props.dispatch({ type: 'FETCH_FEEDBACK' })
-        console.log('tableDATA', this.props.projectReducer);
+        console.log('tableDATA', this.props.feedbackReducer);
         
-        const feedbackArray = this.props.projectReducer.map(item => createData(item.username, item.score, item.helpful, item.comments, item.feedback_id))
+        const feedbackArray = this.props.feedbackReducer.map(item => createData(item.username, item.score, item.helpful, item.comments, item.feedback_id))
         this.setState({
                 data: feedbackArray,
                 selected: [],
@@ -309,7 +309,7 @@ class EnhancedTable extends React.Component {
         const { data, order, orderBy, selected, rowsPerPage, page } = this.state;
         const emptyRows = rowsPerPage - Math.min(rowsPerPage, data.length - page * rowsPerPage);
         
-        console.log('SPENCER', this.props.projectReducer);
+        
         
 
 
