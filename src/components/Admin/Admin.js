@@ -235,14 +235,13 @@ class EnhancedTable extends React.Component {
 // DOM is ready
     componentDidMount() {
        
-        // this.props.dispatch({type: 'FETCH_FEEDBACK'})
+        this.props.dispatch({type: 'FETCH_FEEDBACK'})
          this.inputTableData();
     }
     
     inputTableData =()=>{
-        this.props.dispatch({ type: 'FETCH_FEEDBACK' })
+     
         console.log('tableDATA', this.props.feedbackReducer);
-        
         const feedbackArray = this.props.feedbackReducer.map(item => createData(item.username, item.score, item.helpful, item.comments, item.feedback_id))
         this.setState({
                 data: feedbackArray,
@@ -309,15 +308,19 @@ class EnhancedTable extends React.Component {
         const { data, order, orderBy, selected, rowsPerPage, page } = this.state;
         const emptyRows = rowsPerPage - Math.min(rowsPerPage, data.length - page * rowsPerPage);
         
+        console.log('111111', this.state.data);
         
-        
+        // this.inputTableData();
 
 
         return (
-
+          
+       
+          
             <Paper className={classes.root}>
                 <EnhancedTableToolbar numSelected={selected.length} selectedID={selected} getFeedback={this.getFeedback} />
                 <div className={classes.tableWrapper}>
+            
                     <Table className={classes.table} aria-labelledby="tableTitle">
                         <EnhancedTableHead
                             numSelected={selected.length}

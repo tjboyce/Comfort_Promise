@@ -6,6 +6,7 @@ function* projectSaga () {
     yield takeEvery ('FETCH_INFO', fetchInfo);
     yield takeEvery ('FETCH_FEEDBACK', fetchFeedback)
     yield takeEvery ('ADD_FEEDBACK', postFeedback)
+    yield takeEvery ('DELETE_FEEDBACK', deleteFeedback)
 }
 
 function* fetchInfo() {
@@ -38,5 +39,15 @@ function* postFeedback(action) {
         console.log('post Saga error', error);
     }
 }
+function* deleteFeedback (action) {
+    try {
+        console.log('deleteFeedback SAGA', action.payload);
+        yield axios.delete('api/feedback/'+ action.payload);
+        yield dispatch({ type: 'FETCH_FEEDBACK' });
+    } catch (error) {
+        console.log('delete Saga error', error);
+    }
+}
+
 
 export default projectSaga;

@@ -52,21 +52,7 @@ class RadioButtons extends Component {
        
     };
 
-    // componentDidMount() {
-    //     // this.props.dispatch({type: 'FETCH_FEEDBACK'})
-    //     this.inputTableData();
-    // }
-
-    // inputTableData = () => {
-    //     this.props.dispatch({ type: 'FETCH_FEEDBACK' })
-    //     console.log('tableDATA', this.props.projectReducer);
-    //     // const feedbackArray = this.props.projectReducer.map(item => createData(item.username, item.score, item.helpful, item.comments, item.feedback_id))
-    //     // const idArray = Math.max(this.props.projectReducer.map(item => {
-    //     //     // item.feedback_id;
-    //     // }))
-    //     // console.log(idArray)
-    // }
-
+  
     handleSubmit = () => {
        console.log('handleSubmit', this.state);
        
@@ -75,6 +61,7 @@ class RadioButtons extends Component {
             selectedValue: '',
             selectedValue2: '',
             selectedValue3: '',
+            user: this.props.user.id, 
         })
     }
 

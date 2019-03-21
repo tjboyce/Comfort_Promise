@@ -47,4 +47,22 @@ router.post('/', rejectUnauthenticated, (req, res) => {
        
 });
 })
+
+router.delete('/:id', (req, res) => {
+    const queryText = `DELETE FROM "join" WHERE "id"=$1;`
+    const queryValues = [
+        req.params.id
+    ];
+    console.log('req.params.id', queryValues);
+    
+        pool.query(queryText, queryValues)
+      
+        .then(() => { res.sendStatus(201); })
+        .catch((error) => {
+            console.log('Error completing DELETE query', error);
+            res.sendStatus(500);
+        });
+
+});
+
 module.exports = router;

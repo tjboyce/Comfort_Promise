@@ -17,14 +17,16 @@ import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
 import Resources from '../Resources/Resources';
 import Feedback from '../Feedback/Feedback';
-import Admin from '../Admin/Admin';
+// import Admin from '../Admin/Admin';
+import SelectAge from '../SelectAge/SelectAge';
 
 import './App.css';
+import Admin2 from '../Admin/Admin2';
 
 class App extends Component {
   componentDidMount () {
     this.props.dispatch({type: 'FETCH_USER'})
-    this.props.dispatch({ type: 'FETCH_FEEDBACK' })
+    // this.props.dispatch({ type: 'FETCH_FEEDBACK' })
   }
 
   render() {
@@ -67,7 +69,12 @@ class App extends Component {
             <ProtectedRoute
               exact
               path="/admin"
-              component={Admin}
+              component={Admin2}
+            />
+            <ProtectedRoute
+              exact
+              path="/age"
+              component={SelectAge}
             />
             <Route render={() => <h1>404</h1>} />
 
