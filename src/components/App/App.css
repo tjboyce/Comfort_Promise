@@ -8,14 +8,6 @@ body {
     margin: 50px;
 }
 
-form {
-    background-color: #dbd5d5;
-    width: 30%;
-    height: 250px;
-    margin: 20px auto;
-    padding: 25px;
-    border-radius: 2px;
-}
 
 input {
     margin: 5px;
@@ -47,3 +39,6 @@ input {
     border-bottom:1px solid #444; 
     cursor: pointer;
 }
+/* .mainDiv{
+ background-color: pink
+} */

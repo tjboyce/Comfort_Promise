@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import SelectAge from '../SelectAge/SelectAge';
+// import SelectAge from '../SelectAge/SelectAge';
 
 
 
@@ -12,7 +12,7 @@ import SelectAge from '../SelectAge/SelectAge';
 class Resources extends Component {
   
   componentDidMount = ()=>{
-    this.props.dispatch({type: 'FETCH_INFO'})
+ 
   }
  
 
@@ -24,11 +24,11 @@ class Resources extends Component {
     
     return(
       <>
-      <SelectAge />
+   
     <div>
    
       {/* <div key ={item.id}> */}
-      <h3>{this.props.item.age_group}</h3>
+      {/* <h3>{this.props.item.age_group}</h3> */}
    
          {/* <iframe key = {item.id} src = {item.video} title = "infant video"/>
        <ul>

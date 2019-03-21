@@ -7,7 +7,7 @@ const { rejectUnauthenticated } = require('../modules/authentication-middleware'
  * GET route template
  */
 router.get('/', rejectUnauthenticated, (req, res) => {
-    const queryText = (`SELECT * FROM "ageGroup" WHERE "id" = '1'`)
+    const queryText = (`SELECT * FROM "ageGroup"`)
     pool.query(queryText).then((result) => {
         res.send(result.rows)
         console.log('marcus', result.rows);

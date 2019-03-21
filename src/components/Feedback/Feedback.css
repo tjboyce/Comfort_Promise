@@ -1,7 +1,10 @@
 .feedbackDiv {
-    background-color: lightgrey;
+    /* background-color: #ee4266; */
     text-align: center;
-  
+    width: 700px;
+    display: inline-block;
+    margin-left: 50px;
+    margin-right: 50px
 }
 
 

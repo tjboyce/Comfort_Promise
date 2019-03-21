@@ -1,37 +1,66 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Resources from '../Resources/Resources';
 
+import './SelectAge.css' 
 
 class SelectAge extends Component {
+
+    state = {
+        selection: ''
+    }
 
     componentDidMount = () => {
         this.props.dispatch({ type: 'FETCH_INFO' })
     }
 
-    selectAge (){
-        return this.props.projectReducer.map(item =>
-            <Resources key = {item.id} item={item}/>)
+    handleChange = (event) =>{
+        console.log('event value', event.target.value);
+        
+        this.setState({
+            selection: event.target.value,
+        })
     }
 
 
 
     render() {
-     
+        console.log('TONY',this.state.selection)
+
+
 
         return (
-           <div>
-            <h3>What age child are you working with? </h3>
-                <select>
-                    <option value = ''>Select Age Group Here</option>
-                    <option value="1">Infant</option>
-                    <option value="2">Toddler</option>
-                    <option value="3">School Age</option>
-                    <option value="4">Teens</option>
+         
+            <div className = "selectDiv">
+                <h3>What age child are you working with? </h3>
+                <select onChange = {this.handleChange}>
+                    <option value=''>Select Age Group Here</option>
+                    <option  value="1" className = "infant">Infant</option>
+                    <option value="2" className="toddler">Toddler</option>
+                    <option value="3" className="schoolAge">School Age</option>
+                    <option  value="4" className="teens">Teens</option>
                 </select>
-                {this.selectAge()}
-           </div>
+     
+             <div>
+                 {this.props.projectReducer.filter(item => item.id === Number(this.state.selection)).map(item => 
+                    <>
+                    <div className="infoDiv"><h3>{item.age_group}</h3>
 
+                    <iframe className="videoDiv" key={item.id} src={item.video} title="infant video" />
+                    <ul>
+                        <li>{item.resource1}</li>
+                        <li>{item.resource2}</li>
+                        <li>{item.resource3}</li>
+                        <li>{item.resource4}</li>
+                        <li>{item.resource5}</li>
+                    </ul>
+                         </div>
+                    </>
+                 )}
+                </div>
+
+
+            </div>
+       
         )
     }
 }

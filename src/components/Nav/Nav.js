@@ -2,14 +2,22 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
+// import Button from '@material-ui/core/Button'
 import './Nav.css';
 
 const Nav = (props) => (
+<div>
+
+     
+  
+  
   <div className="nav">
-    <Link to="/home">
-      <h2 className="nav-title">Comfort Promise</h2>
-    </Link>
-    <div className="nav-right">
+     <Link to="/home">
+          <h2 className="nav-title">Comfort Promise</h2>
+        </Link>
+      <div>
+    <div className="nav-left">
+    
       <Link className="nav-link" to="/home">
         {/* Show this link if they are logged in or not,
         but call this link 'Home' if they are logged in,
@@ -19,9 +27,9 @@ const Nav = (props) => (
       {/* Show the link to the info page and the logout button if the user is logged in */}
       {props.user.id && (
         <>
-          <Link className="nav-link" to="/info">
+          {/* <Link className="nav-link" to="/info">
             Resources
-          </Link>
+          </Link> */}
           <Link className="nav-link" to="/feedback">
             Feedback
           </Link>
@@ -29,16 +37,19 @@ const Nav = (props) => (
             Admin
           </Link>
           <Link className="nav-link" to="/age">
-            Age 
+            Resources 
           </Link>
           <LogOutButton className="nav-link"/>
+          
         </>
       )}
       {/* Always show this link since the about page is not protected */}
       <Link className="nav-link" to="/about">
         About
       </Link>
+        </div>
     </div>
+  </div>
   </div>
 );
 
