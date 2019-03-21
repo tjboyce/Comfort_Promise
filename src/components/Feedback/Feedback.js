@@ -7,6 +7,7 @@ import Radio from '@material-ui/core/Radio';
 import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
 import RadioButtonCheckedIcon from '@material-ui/icons/RadioButtonChecked';
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 // import Paper from '@material-ui/core/Paper';
 // import Typography from '@material-ui/core/Typography';
 import './Feedback.css'
@@ -24,6 +25,15 @@ const styles = theme => ({
 
     },
     checked: {},
+   
+        button: {
+            margin: theme.spacing.unit,
+        },
+        input: {
+            display: 'none',
+        },
+  
+
     
     // container: {
     //     display: 'flex',
@@ -154,10 +164,11 @@ class RadioButtons extends Component {
 
             </div>
             <div>
+                <h4>Please let us know how we can better support your Comfort Promise Practice!</h4>
                     <TextField
                         id="outlined-textarea"
-                        label="Comments"
-                        placeholder="Comments"
+                        label="Comments" 
+                        placeholder="Comments" 
                         onChange= {this.handleComments}
                         className={classes.textField}
                         margin="normal"
@@ -165,7 +176,10 @@ class RadioButtons extends Component {
                     />    
 
             </div>
-                    <button onClick = {this.handleSubmit}>submit</button>
+                <Button variant="contained" color="secondary" className={classes.button} onClick={this.handleSubmit}>
+                    Submit Feedback
+                </Button>
+                    
             </div>
             
         );

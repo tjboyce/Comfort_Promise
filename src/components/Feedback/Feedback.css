@@ -3,8 +3,14 @@
     text-align: center;
     width: 700px;
     display: inline-block;
-    margin-left: 50px;
+    margin-left: 200px;
     margin-right: 50px
+}
+
+#outlined-textarea{
+    width: 400px;
+    height: 100px;
+    text-align: center;
 }
 
 
