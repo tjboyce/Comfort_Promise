@@ -10,7 +10,6 @@ function* projectSaga () {
 }
 
 function* fetchInfo() {
-    console.log('fetchInfo was hit');
     try {
         const infoResponse = yield axios.get('/api/info');
         yield dispatch({ type: 'GET_INFO', payload: infoResponse.data })
@@ -20,7 +19,6 @@ function* fetchInfo() {
 }
 
 function* fetchFeedback (){
-    console.log('fetchInfo was hit');
     try {
         const feedbackResponse = yield axios.get('/api/feedback');
         yield dispatch({ type: 'GET_FEEDBACK', payload: feedbackResponse.data })
@@ -32,7 +30,6 @@ function* fetchFeedback (){
 
 function* postFeedback(action) {
     try {
-        console.log('postFeedback', action.payload);
         yield axios.post('api/feedback', action.payload);
         yield dispatch({ type: 'FETCH_FEEDBACK' });
     } catch (error) {
@@ -41,7 +38,6 @@ function* postFeedback(action) {
 }
 function* deleteFeedback (action) {
     try {
-        console.log('deleteFeedback SAGA', action.payload);
         yield axios.delete('api/feedback/'+ action.payload);
         yield dispatch({ type: 'FETCH_FEEDBACK' });
     } catch (error) {

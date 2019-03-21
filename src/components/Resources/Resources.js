@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import SelectAge from '../SelectAge/SelectAge';
+
 
 
 // This is one of our simplest components
@@ -22,22 +24,22 @@ class Resources extends Component {
     
     return(
       <>
+      <SelectAge />
     <div>
-     {this.props.projectReducer.map((item)=>(
-      <div key ={item.id}>
-      <h3>{item.age_group}</h3>
    
-         <iframe key = {item.id} src = {item.video} title = "infant video"/>
+      {/* <div key ={item.id}> */}
+      <h3>{this.props.item.age_group}</h3>
+   
+         {/* <iframe key = {item.id} src = {item.video} title = "infant video"/>
        <ul>
-          
-         <li>{item.resource1}</li>
+          <li>{item.resource1}</li>
          <li>{item.resource2}</li>
          <li>{item.resource3}</li>
          <li>{item.resource4}</li>
          <li>{item.resource5}</li>
        </ul>
-      </div>
-     ))}
+      </div> */}
+    
      </div>
  
     </>

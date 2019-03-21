@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Resources from '../Resources/Resources';
 
 
 class SelectAge extends Component {
 
     componentDidMount = () => {
-        
+        this.props.dispatch({ type: 'FETCH_INFO' })
     }
 
-
+    selectAge (){
+        return this.props.projectReducer.map(item =>
+            <Resources key = {item.id} item={item}/>)
+    }
 
 
 
@@ -25,7 +29,9 @@ class SelectAge extends Component {
                     <option value="3">School Age</option>
                     <option value="4">Teens</option>
                 </select>
+                {this.selectAge()}
            </div>
+
         )
     }
 }
