@@ -44,7 +44,7 @@ class SelectAge extends Component {
                  {this.props.projectReducer.filter(item => item.id === Number(this.state.selection)).map(item => 
                     <>
                     <div className="infoDiv"><h3>{item.age_group}</h3>
-
+                    
                     <iframe className="videoDiv" key={item.id} src={item.video} title="infant video" />
                     <ul>
                         <li>{item.resource1}</li>

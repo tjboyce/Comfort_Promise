@@ -73,6 +73,7 @@ class RadioButtons extends Component {
             selectedValue3: '',
             user: this.props.user.id, 
         })
+        this.props.history.push('/thanks')
     }
 
     handleChange = event => {

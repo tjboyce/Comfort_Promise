@@ -20,14 +20,10 @@ import Tooltip from '@material-ui/core/Tooltip';
 import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
 import { lighten } from '@material-ui/core/styles/colorManipulator';
-
-
 // let counter = 0;
 function createData(username, rating, helpful, comments, id) {
     return { id: id, username, rating, helpful, comments };
-
 }
-
 function desc(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {
         return -1;
@@ -38,7 +34,6 @@ function desc(a, b, orderBy) {
     return 0;
 }
 
-
 function stableSort(array, cmp) {
     const stabilizedThis = array.map((el, index) => [el, index]);
     stabilizedThis.sort((a, b) => {
@@ -48,11 +43,9 @@ function stableSort(array, cmp) {
     });
     return stabilizedThis.map(el => el[0]);
 }
-
 function getSorting(order, orderBy) {
     return order === 'desc' ? (a, b) => desc(a, b, orderBy) : (a, b) => -desc(a, b, orderBy);
 }
-
 const rows = [
     { id: 'username', numeric: false, disablePadding: false, label: 'Username' },
     { id: 'rating', numeric: true, disablePadding: false, label: 'Rating' },
@@ -110,7 +103,6 @@ class EnhancedTableHead extends React.Component {
         );
     }
 }
-
 EnhancedTableHead.propTypes = {
     numSelected: PropTypes.number.isRequired,
     onRequestSort: PropTypes.func.isRequired,
@@ -221,8 +213,6 @@ const styles = theme => ({
     },
 });
 
-
-
 class EnhancedTable extends React.Component {
     state = {
         order: 'asc',
@@ -232,23 +222,25 @@ class EnhancedTable extends React.Component {
         page: 0,
         rowsPerPage: 10,
     };
-// DOM is ready
+    // DOM is ready
     componentDidMount() {
-       
-        this.props.dispatch({type: 'FETCH_FEEDBACK'})
-         this.inputTableData();
+
+        this.props.dispatch({ type: 'FETCH_FEEDBACK' })
+        this.inputTableData();
     }
-    
-    inputTableData =()=>{
-     
+    reload = () => {
+        //RELOAD COMPONENT
+        this.componentDidMount();
+    };
+
+    inputTableData = () => {
         console.log('tableDATA', this.props.feedbackReducer);
         const feedbackArray = this.props.feedbackReducer.map(item => createData(item.username, item.score, item.helpful, item.comments, item.feedback_id))
         this.setState({
-                data: feedbackArray,
-                selected: [],
-            })
+            data: feedbackArray,
+            selected: [],
+        })
     }
-
     handleRequestSort = (event, property) => {
         const orderBy = property;
         let order = 'desc';
@@ -256,21 +248,16 @@ class EnhancedTable extends React.Component {
         if (this.state.orderBy === property && this.state.order === 'desc') {
             order = 'asc';
         }
-
         this.setState({ order, orderBy });
     };
 
     handleSelectAllClick = event => {
-
         if (event.target.checked) {
             this.setState(state => ({ selected: state.data.map(n => n.id) }));
-
             return;
         }
         this.setState({ selected: [] });
     };
-
-
 
     handleClick = (event, id) => {
         const { selected } = this.state;
@@ -307,20 +294,17 @@ class EnhancedTable extends React.Component {
         const { classes } = this.props;
         const { data, order, orderBy, selected, rowsPerPage, page } = this.state;
         const emptyRows = rowsPerPage - Math.min(rowsPerPage, data.length - page * rowsPerPage);
-        
+
         console.log('111111', this.state.data);
-        
+
         // this.inputTableData();
 
 
         return (
-          
-       
-          
             <Paper className={classes.root}>
                 <EnhancedTableToolbar numSelected={selected.length} selectedID={selected} getFeedback={this.getFeedback} />
                 <div className={classes.tableWrapper}>
-            
+
                     <Table className={classes.table} aria-labelledby="tableTitle">
                         <EnhancedTableHead
                             numSelected={selected.length}
@@ -330,7 +314,6 @@ class EnhancedTable extends React.Component {
                             onRequestSort={this.handleRequestSort}
                             rowCount={data.length}
                         />
-
                         <TableBody>
                             {stableSort(data, getSorting(order, orderBy))
                                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
@@ -397,4 +380,3 @@ const mapReduxStateToProps = reduxState => {
 export default withStyles(styles)(
     connect(mapReduxStateToProps)(EnhancedTable));
 
-// export default withStyles(styles)(EnhancedTable);

@@ -23,6 +23,9 @@ input {
   outline:0;
   cursor: pointer;
 }
+.thanks{
+    text-align: center;
+}
 
 .log-in:hover, .log-out:hover, .register:hover {
   background-color: #008183;

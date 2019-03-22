@@ -5,7 +5,6 @@ import {
   Redirect,
   Switch,
 } from 'react-router-dom';
-
 import {connect} from 'react-redux';
 
 import Nav from '../Nav/Nav';
@@ -19,6 +18,7 @@ import Resources from '../Resources/Resources';
 import Feedback from '../Feedback/Feedback';
 // import Admin from '../Admin/Admin';
 import SelectAge from '../SelectAge/SelectAge';
+import Thanks from '../Thanks/Thanks';
 
 import './App.css';
 import Admin2 from '../Admin/Admin2';
@@ -75,6 +75,11 @@ class App extends Component {
               exact
               path="/age"
               component={SelectAge}
+            />
+            <Route
+              exact
+              path="/thanks"
+              component={Thanks}
             />
             <Route render={() => <h1>404</h1>} />
 

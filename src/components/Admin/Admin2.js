@@ -5,26 +5,22 @@ import TableHead from '@material-ui/core/TableHead';
 import { TableBody, TableRow, TableCell } from '@material-ui/core';
 import Button from '@material-ui/core/Button'
 
-
 class Admin2 extends Component{
-
 componentDidMount (){
     this.props.dispatch ({type: 'FETCH_FEEDBACK'})
 }
-
 handleDeleteClick = id =>()=> {
     this.props.dispatch({type: 'DELETE_FEEDBACK', payload: id})
 }
-
 render () {
-
     return(
         <Table>
             <TableHead className='table'>
-                <th>Username</th>
+             <th>Username</th>
                 <th>Score</th>
                 <th>Helpful</th>
                 <th>Comments</th>
+                <th>Delete</th>
             </TableHead>
             {this.props.feedbackReducer.map((item) => (
                 <TableBody>
@@ -45,6 +41,5 @@ render () {
 const mapStateToProps = state =>({
     feedbackReducer: state.feedbackReducer, 
 });
-
-export default connect(mapStateToProps)(Admin2);
+export default  connect(mapStateToProps)(Admin2);
 
