@@ -11,14 +11,22 @@ class ProcedureMain extends Component {
         return (
             <div>
                 <div>
-                    <h1>
-                      Procedures
-      </h1>
-      <ul>
-          <li>
+                    <h1>Procedures</h1>
+                    <ul>
+                        <li>
                             <Link to="/procedure/xray">Xray</Link>
-          </li>
-          </ul>
+                        </li>
+                        <li>
+                            <Link to="/procedure/IV">IV</Link>
+                        </li>
+                        <li>Stitches</li>
+                        <li>Lab Draw</li>
+                        <li>Surgery</li>
+                        <li>Ultrasound</li>
+                        <li>Flouro</li>
+                        <li>CT Scan </li>
+                        <li>MRI</li>
+                    </ul>
                 </div>
             </div>
 

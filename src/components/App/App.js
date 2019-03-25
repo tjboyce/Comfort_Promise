@@ -29,6 +29,15 @@ import Xray2 from '../Procedures/XrayProcedure/Xray2';
 import Xray3 from '../Procedures/XrayProcedure/Xray3';
 import Xray4 from '../Procedures/XrayProcedure/Xray4';
 import Completed from '../Procedures/Completed'
+//import iv procedure links
+import IV from '../Procedures/IV/IvProcedure'
+
+import IV2 from '../Procedures/IV/iv2'
+import IV3 from '../Procedures/IV/iv3'
+import IV4 from '../Procedures/IV/iv4'
+import IV5 from '../Procedures/IV/iv5'
+import IV6 from '../Procedures/IV/iv6'
+
 
 class App extends Component {
   componentDidMount () {
@@ -111,6 +120,31 @@ class App extends Component {
             <ProtectedRoute
               exact path='/procedure/completed'
               component={Completed} />
+            <ProtectedRoute
+              exact path='/procedure/IV'
+              component={IV} />
+            {/* // <ProtectedRoute */}
+            {/* //   exact path='/procedure/iv1'
+            //   component={IV1} /> */}
+            <ProtectedRoute
+              exact path='/procedure/iv2'
+              component={IV2} />
+            <ProtectedRoute
+              exact path='/procedure/iv3'
+              component={IV3} />
+            <ProtectedRoute
+              exact path='/procedure/iv4'
+              component={IV4} />
+            <ProtectedRoute
+              exact path='/procedure/iv5'
+              component={IV5} />
+            <ProtectedRoute
+              exact path='/procedure/iv6'
+              component={IV6} />
+            <ProtectedRoute
+              exact path='/procedure/completed'
+              component={Completed} />
+
 
 
             <Route render={() => <h1>404</h1>} />
