@@ -2,22 +2,24 @@
     font-size: 43px;
     font-weight: 700;
     display: inline-block;
-    color: #f2f2f2;
+    color: #0a0a0a;
     padding-left: 10px;
     align-content: center;
-    font-family: 'Baloo Chettan', cursive;
+    font-family: helvetica;
+   font-style: oblique;
+  
 }
 
 .nav {
   overflow: hidden;
-  background-color: #1c1259;
-  text-align: center
+  background-color: #73afb6;
+  text-align: center;
 }
 
 .nav-link {
   float: left;
   color: #f2f2f2;
-  background-color: #1c1259;
+  background-color: #73afb6;
   text-align: center;
   padding: 24px 10px;
   text-decoration: none;
@@ -31,7 +33,7 @@
 }
 
 .nav-link:hover {
-  background-color: #1c1259
+  background-color: #569fb3
 }
 
 .nav-left {

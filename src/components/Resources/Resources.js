@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import SelectAge from '../SelectAge/SelectAge';
 
+// import Button from '@material-ui/core/Button'
+
 
 
 // This is one of our simplest components
@@ -15,7 +17,9 @@ class Resources extends Component {
  
   }
  
-
+  // handleClick = (props) => {
+  //  this.props.history.push('/age')
+  // }
   
 
 
@@ -26,19 +30,7 @@ class Resources extends Component {
       <>
    
     <div>
-   
-      {/* <div key ={item.id}> */}
-      {/* <h3>{this.props.item.age_group}</h3> */}
-   
-         {/* <iframe key = {item.id} src = {item.video} title = "infant video"/>
-       <ul>
-          <li>{item.resource1}</li>
-         <li>{item.resource2}</li>
-         <li>{item.resource3}</li>
-         <li>{item.resource4}</li>
-         <li>{item.resource5}</li>
-       </ul>
-      </div> */}
+          {/* <Button onClick={this.handleClick}>Test Button</Button> */}
     
      </div>
  

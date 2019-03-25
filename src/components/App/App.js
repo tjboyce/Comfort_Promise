@@ -8,7 +8,6 @@ import {
 import {connect} from 'react-redux';
 
 import Nav from '../Nav/Nav';
-import Footer from '../Footer/Footer';
 
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 
@@ -19,9 +18,17 @@ import Feedback from '../Feedback/Feedback';
 // import Admin from '../Admin/Admin';
 import SelectAge from '../SelectAge/SelectAge';
 import Thanks from '../Thanks/Thanks';
-
+import XrayProcedure from '../Procedures/XrayProcedure/XrayProcedure'
 import './App.css';
 import Admin2 from '../Admin/Admin2';
+import ProcedureMain from '../Procedures/ProcedureMain/ProcedureMain';
+
+//import xray procedure links
+import Xray1 from '../Procedures/XrayProcedure/Xray1';
+import Xray2 from '../Procedures/XrayProcedure/Xray2';
+import Xray3 from '../Procedures/XrayProcedure/Xray3';
+import Xray4 from '../Procedures/XrayProcedure/Xray4';
+import Completed from '../Procedures/Completed'
 
 class App extends Component {
   componentDidMount () {
@@ -81,10 +88,35 @@ class App extends Component {
               path="/thanks"
               component={Thanks}
             />
+            <ProtectedRoute
+              exact path='/procedure/xray'
+              component={XrayProcedure}
+            />
+            <ProtectedRoute 
+            exact path='/procedure'
+            component={ProcedureMain}
+            />
+          <ProtectedRoute 
+          exact path='/procedure/xray1'
+          component={Xray1} />
+            <ProtectedRoute
+              exact path='/procedure/xray2'
+              component={Xray2} />
+            <ProtectedRoute
+              exact path='/procedure/xray3'
+              component={Xray3} />
+            <ProtectedRoute
+              exact path='/procedure/xray4'
+              component={Xray4} />
+            <ProtectedRoute
+              exact path='/procedure/completed'
+              component={Completed} />
+
+
             <Route render={() => <h1>404</h1>} />
 
           </Switch>
-          <Footer />
+          
         </div>
       </Router>
   )}

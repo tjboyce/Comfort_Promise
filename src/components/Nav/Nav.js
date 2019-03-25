@@ -4,18 +4,20 @@ import { connect } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
 // import Button from '@material-ui/core/Button'
 import './Nav.css';
-
+import stars from '../Nav/stars.jpeg'
 const Nav = (props) => (
-<div>
 
-     
+
+     <div className="nav">
+
   
   
-  <div className="nav">
-     <Link to="/home">
+   
+      <div>
+        {/* <img src={stars} alt="background-image" className="background-image" width="100%" height /> */}
+  <Link to="/home">
           <h2 className="nav-title">Comfort Promise</h2>
         </Link>
-      <div>
     <div className="nav-left">
     
       <Link className="nav-link" to="/home">
@@ -37,8 +39,9 @@ const Nav = (props) => (
             Admin
           </Link>
           <Link className="nav-link" to="/age">
-            Resources 
+            Age 
           </Link>
+          <Link className="nav-link" to="/procedure" > Procedure</Link>
           <LogOutButton className="nav-link"/>
           
         </>
@@ -50,7 +53,7 @@ const Nav = (props) => (
         </div>
     </div>
   </div>
-  </div>
+  
 );
 
 // Instead of taking everything from state, we just want the user
