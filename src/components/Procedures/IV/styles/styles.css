@@ -1,0 +1,20 @@
+
+.spicy-button🌶 {
+                        height: 50px;
+                        line-height: 50px;
+                        vertical-align: middle;
+                        text-align: center;
+                        font-size: 15px;
+                        color: #fff;
+                        background-color: rgb(255, 140, 0);
+                        margin: 0px auto;
+                        font-weight: 300;
+                        border-radius: 3px;
+                        cursor: pointer;
+                        transition: all .2s cubic-bezier(.75,-0.5,0,5);
+}
+
+.spicy-button🌶:hover{
+    transform: translateY(-3px)
+}
+

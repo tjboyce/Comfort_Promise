@@ -31,13 +31,13 @@ import Xray4 from '../Procedures/XrayProcedure/Xray4';
 import Completed from '../Procedures/Completed'
 //import iv procedure links
 import IV from '../Procedures/IV/IvProcedure'
-
 import IV2 from '../Procedures/IV/iv2'
 import IV3 from '../Procedures/IV/iv3'
 import IV4 from '../Procedures/IV/iv4'
 import IV5 from '../Procedures/IV/iv5'
 import IV6 from '../Procedures/IV/iv6'
-
+import IV7 from '../Procedures/IV/iv7'
+import IV8 from '../Procedures/IV/iv8'
 
 class App extends Component {
   componentDidMount () {
@@ -142,8 +142,15 @@ class App extends Component {
               exact path='/procedure/iv6'
               component={IV6} />
             <ProtectedRoute
+              exact path='/procedure/iv7'
+              component={IV7} />
+            <ProtectedRoute
+              exact path='/procedure/iv8'
+              component={IV8} />
+            <ProtectedRoute
               exact path='/procedure/completed'
               component={Completed} />
+              
 
 
 

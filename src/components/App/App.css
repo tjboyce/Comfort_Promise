@@ -1,5 +1,4 @@
 body {
-    font-family: 'Comic Sans';
     margin: 0px;
     /* background-image: url ("stars.jpeg") */
 }
@@ -46,3 +45,7 @@ input {
 /* .mainDiv{
  background-color: pink
 } */
+
+.ivpage2{
+color: white
+}

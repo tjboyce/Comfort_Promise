@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import IV4 from './iv4.jpeg'
+import cleaner from './clean.jpeg'
 
 // This is one of our simplest components
 // It doesn't have local state, so it can be a function component.
@@ -14,10 +14,11 @@ class IV5 extends Component {
     render() {
         return (
             <div>
-                <img src={IV4} alt="two-iv-pic" width="100%" />
+                <img src={cleaner} alt="two-iv-pic" width="100%" />
                 <div>
-                    <h1>IV fourth step</h1>
-                    <button onClick={this.handleClick}>Start Procedure</button>
+                    <h1>IV third step</h1>
+                    <span> It is very important that your skin is clean when you get an IV. The cleaner feels cool on your skin and smells like hand sanitizer.</span>
+                    <button onClick={this.handleClick}>Next</button>
                 </div>
             </div>
 

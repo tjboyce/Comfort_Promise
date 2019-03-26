@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import IV1 from './iv1.jpeg'
+import accuvein from './accuvein.jpg'
 
 // This is one of our simplest components
 // It doesn't have local state, so it can be a function component.
@@ -13,11 +13,19 @@ class IV3 extends Component {
 
     render() {
         return (
-            <div>
-                <img src={IV1} alt="two-iv-pic" width="100%" />
+            <div style={{
+                background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${accuvein})`,
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                width: '100vw',
+                height: '100vh',
+                backgroundSize: 'cover',
+                position: 'absolute',
+            }}>
                 <div>
-                    <h1>IV second step</h1>
-                    <button onClick={this.handleClick}>Start Procedure</button>
+                    <h1>IV first step</h1>
+                    <span>A nurse will look for the best place to put your IV. He or she might use an Accu Vein machine to find a good vein. </span>
+                    <button onClick={this.handleClick}>Next</button>
                 </div>
             </div>
 

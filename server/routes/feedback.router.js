@@ -48,7 +48,7 @@ router.post('/', rejectUnauthenticated, (req, res) => {
 });
 })
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', rejectUnauthenticated, (req, res) => {
     const queryText = `DELETE FROM "join" WHERE "feedback_id" = $1`
     const queryValues = [
         req.params.id
