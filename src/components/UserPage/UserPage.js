@@ -2,8 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import Button from '@material-ui/core/Button'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Resources from '../Resources/Resources';
+import './UserPage.css'
 
 
 
@@ -14,11 +15,11 @@ import Resources from '../Resources/Resources';
 const UserPage = (props) => (
   <div>
     <h1 id="welcome">
-      Welcome, { props.user.username }!
-    </h1>
-    <p>Your ID is: {props.user.id}</p>
-   <Link to="/age">
-   <h2>Resources
+      Welcome, {props.user.username}!
+    </h1> 
+    {/* <p>Your ID is: {props.user.id}</p>
+    <Link to="/age">
+      <h2>Resources
      </h2></Link>
     <Link to="/procedure">
       <h2>Procedure Prep
@@ -26,10 +27,31 @@ const UserPage = (props) => (
     <Link to="/feedback">
       <h2>Feedback
      </h2></Link>
-<Resources props={props} />
-     {/* <Button onClick = {this.handleClick}>Test Button</Button> */}
-   
-    <LogOutButton className="log-in" />
+    <Resources props={props} /> */}
+    {/* <Button onClick = {this.handleClick}>Test Button</Button> */}
+
+    {/* <LogOutButton className="log-in" />*/}
+     
+     
+     <div className = "buttonDiv">
+
+     <div className="button-div">
+      <i class="fas fa-user-md"></i>
+        <button className = "buttonA">Resources</button>
+      </div>
+      
+      <div className="button-div">
+      <i class="fas fa-notes-medical"></i>
+        <button className="buttonA">Procedure Prep</button>
+      </div>
+    
+      <div className="button-div">
+      <i class="fas fa-comment-medical"></i>
+        <button className = "buttonA">Feedback</button>
+      </div>
+ 
+
+   </div> 
   </div>
 );
 
