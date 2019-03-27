@@ -13,10 +13,10 @@ class Xray1 extends Component {
 
     render() {
         return (
-            <div>
-                <img src={xray2} alt="handXray" width="100%" />
+            <div id="procedureDiv">
+                <img src={xray2} alt="handXray" />
                 <div>
-                    <h1>Some text about xrays</h1>
+                    <h1>Depending on what the doctor needs a picture of, you may need to sit, stand, or lay down in different positions. This is one way we can take a picture of your chest. </h1>
                     <button onClick={this.handleClick}>Next</button>
                 </div>
             </div>

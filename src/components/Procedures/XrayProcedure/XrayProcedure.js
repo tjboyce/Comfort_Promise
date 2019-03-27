@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import xray1 from '../XrayProcedure/xray1.jpeg'
+import xray_thumb_up from '../XrayProcedure/xray_thumb_up.jpg'
 
 
 // This is one of our simplest components
@@ -14,8 +14,8 @@ class XrayProcedure  extends Component {
 
 render () {
     return (
-        <div>
-            <img src={xray1} alt="handXray" width="100%" />
+        <div id= "procedureDiv">
+            <img src={xray_thumb_up} alt="handXray" id= "xray"  />
 
             <div>
                 <h1>X-ray Procedure</h1>

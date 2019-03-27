@@ -23,8 +23,8 @@ const UserPage = (props) => (
     <Link to="/procedure">
       <h2>Procedure Prep
      </h2></Link>
-    <Link to="/age">
-      <h2>Links
+    <Link to="/feedback">
+      <h2>Feedback
      </h2></Link>
 <Resources props={props} />
      {/* <Button onClick = {this.handleClick}>Test Button</Button> */}

@@ -14,10 +14,10 @@ class Xray4 extends Component {
 
     render() {
         return (
-            <div>
-                <img src={xray4} alt="handXray" width="100%" />
+            <div id="procedureDiv">
+                <img src={xray4} alt="handXray"  />
                 <div>
-                    <h1>Last Xray page</h1>
+                    <h1>When you are having an x-ray taken, sometimes kids wear a heavy apron over the part of the body that does not need a picture. </h1>
                     <button onClick={this.handleClick}>Finish</button>
                 </div>
             </div>

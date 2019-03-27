@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Table from '@material-ui/core/Table';
-import TableHead from '@material-ui/core/TableHead';
-import { TableBody, TableRow, TableCell } from '@material-ui/core';
+// import Table from '@material-ui/core/Table';
+// import TableHead from '@material-ui/core/TableHead';
+// import { TableBody, TableRow, TableCell } from '@material-ui/core';
 import Button from '@material-ui/core/Button'
 
 class Admin2 extends Component{
@@ -14,27 +14,39 @@ handleDeleteClick = id =>()=> {
 }
 render () {
     return(
-        <Table>
-            <TableHead className='table'>
+        <>
+        <h1 id = "feedback">Feedback</h1>
+        <div id='tbl-header'>
+        <table cellpadding ="0" cellspacing = "0" border= "0">
+            <thead>
              <th>Username</th>
                 <th>Score</th>
                 <th>Helpful</th>
                 <th>Comments</th>
                 <th>Delete</th>
-            </TableHead>
+            </thead>
+            </table>    
+            </div>
+            
+            <div id="tbl-content">
+            <table>
+            <tbody>
             {this.props.feedbackReducer.map((item) => (
-                <TableBody>
-                    <TableRow>
-                        <TableCell>{item.username}</TableCell>
-                        <TableCell>{item.score}</TableCell>
-                        <TableCell>{item.helpful}</TableCell>
-                        <TableCell>{item.comments}</TableCell>
-                        <TableCell><Button class="deleteButton" onClick={this.handleDeleteClick(item.feedback_id)}>Delete</Button>
-                        </TableCell>
-                    </TableRow>
-                </TableBody>
+               
+                    <tr>
+                        <td>{item.username}</td>
+                        <td>{item.score}</td>
+                        <td>{item.helpful}</td>
+                        <td>{item.comments}</td>
+                        <td><Button class="deleteButton" onClick={this.handleDeleteClick(item.feedback_id)}>Delete</Button>
+                        </td>
+                    </tr>
+               
             ))}
-        </Table>
+             </tbody>
+       </table>
+        </div>
+       </>
     )
 }
 }
