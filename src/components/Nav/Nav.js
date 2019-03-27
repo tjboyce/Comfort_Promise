@@ -16,7 +16,7 @@ const Nav = (props) => (
       <div>
         {/* <img src={stars} alt="background-image" className="background-image" width="100%" height /> */}
   <Link to="/home">
-          <h2 className="nav-title">Comfort Promise</h2>
+        <h2 className="nav-title"><i class="fas fa-child"></i>  Comfort Promise</h2>
         </Link>
     <div className="nav-left">
     

@@ -28,7 +28,7 @@
   text-align: center;
   padding: 24px 10px;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 18px;
 
   /* these last two make the logout button in
   the nav bar look like another link */
@@ -38,7 +38,7 @@
 }
 
 .nav-link:hover {
-  background-color: #569fb3
+  background-color: #25b7c4;
 }
 
 .nav-left {

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 // import Table from '@material-ui/core/Table';
 // import TableHead from '@material-ui/core/TableHead';
 // import { TableBody, TableRow, TableCell } from '@material-ui/core';
-import Button from '@material-ui/core/Button'
+// import Button from '@material-ui/core/Button'
 
 class Admin2 extends Component{
 componentDidMount (){
@@ -38,7 +38,7 @@ render () {
                         <td>{item.score}</td>
                         <td>{item.helpful}</td>
                         <td>{item.comments}</td>
-                        <td><Button class="deleteButton" onClick={this.handleDeleteClick(item.feedback_id)}>Delete</Button>
+                        <td><button className="buttonA" onClick={this.handleDeleteClick(item.feedback_id)}>Delete</button>
                         </td>
                     </tr>
                

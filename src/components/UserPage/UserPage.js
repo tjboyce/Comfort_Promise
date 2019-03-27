@@ -33,7 +33,7 @@ const UserPage = (props) => (
     {/* <LogOutButton className="log-in" />*/}
      
      
-     <div className = "buttonDiv">
+     <div className = "homeButtonDiv">
 
      <div className="button-div">
       <i class="fas fa-user-md"></i>
@@ -41,12 +41,12 @@ const UserPage = (props) => (
       </div>
       
       <div className="button-div">
-      <i class="fas fa-notes-medical"></i>
+        <i class="fas fa-notes-medical"></i>
         <button className="buttonA">Procedure Prep</button>
       </div>
     
       <div className="button-div">
-      <i class="fas fa-comment-medical"></i>
+        <i class="fas fa-comment-medical"></i>
         <button className = "buttonA">Feedback</button>
       </div>
  

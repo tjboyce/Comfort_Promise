@@ -31,7 +31,7 @@ class SelectAge extends Component {
         return (
          
             <div className = "selectDiv">
-                <h3>What age child are you working with? </h3>
+                <h2>What age child are you working with? </h2>
                 <select onChange = {this.handleChange}>
                     <option value=''>Select Age Group Here</option>
                     <option  value="1" className = "infant">Infant</option>

@@ -8,7 +8,7 @@ import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
 import RadioButtonCheckedIcon from '@material-ui/icons/RadioButtonChecked';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-// import Paper from '@material-ui/core/Paper';
+import Paper from '@material-ui/core/Paper';
 // import Typography from '@material-ui/core/Typography';
 import './Feedback.css'
 
@@ -19,9 +19,9 @@ const styles = theme => ({
         '&$checked': {
             color: green[500],
         },
-        // ...theme.mixins.gutters(),
-        // paddingTop: theme.spacing.unit * 1,
-        // paddingBottom: theme.spacing.unit * 1,
+        ...theme.mixins.gutters(),
+        paddingTop: theme.spacing.unit * 1,
+        paddingBottom: theme.spacing.unit * 1,
 
     },
     checked: {},
@@ -92,6 +92,7 @@ class RadioButtons extends Component {
 
         return (
             < div className = "feedbackDiv">
+                <Paper className={classes.root} elevation={1}>
             <div>
           
                 <h4>How well did the procedure go?</h4>
@@ -180,7 +181,7 @@ class RadioButtons extends Component {
                 <Button variant="contained" color="secondary" className={classes.button} onClick={this.handleSubmit}>
                     Submit Feedback
                 </Button>
-                    
+                 </Paper>   
             </div>
             
         );

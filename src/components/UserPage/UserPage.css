@@ -8,6 +8,7 @@
     background-color: #e4e4e4;
     transition: all .3s; 
     border: none;  
+    color: #157b85;
 }
 
 .buttonA:hover {
@@ -18,7 +19,7 @@
 }
 
 
-.buttonDiv{
+.homeButtonDiv{
     /* display: inline-block; */
     text-align: center;
     margin-top: 160px;
@@ -36,7 +37,7 @@
    
 }
 
-i {
+.homeButtonDiv i {
     font-size: 70px;
     color: white;
     position: absolute;
