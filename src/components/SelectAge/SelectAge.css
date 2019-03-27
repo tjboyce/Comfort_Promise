@@ -1,6 +1,8 @@
 .videoDiv{
    float: right;
-   margin-right: 200px;
+   margin-right: 400px;
+ 
+   
    
 }
 
@@ -12,5 +14,9 @@
 }
 
 .infoDiv{
-    text-align: left
+  
+    text-align: left;
+    padding-left: 300px;
+    color: white;
+
 }
