@@ -10,17 +10,19 @@ class IV6 extends Component {
     handleClick = () => {
         this.props.history.push('/procedure/iv8')
     }
+    handleBack = () => {
+        this.props.history.push('/procedure')
+    }
 
     render() {
         return (
-            <div>
-                <img src={needleiv} alt="two-iv-pic" width="100%" />
-                <div>
-                    <h1>IV fifth step </h1>
-                    <span>Your job is to hold very still. There are other things you can choose to do during the procedure;
-                        such as playing the ISpy game, taking deep breaths, or watching.
-                    </span>
-                    <button onClick={this.handleClick}>Next</button>
+            <div id ="procedureDiv">
+                <img src={needleiv} alt="two-iv-pic" />
+                <div id = "feedback">
+                    <h1>Your job is to hold very still. There are other things you can choose to do during the procedure;
+                        such as playing the ISpy game, taking deep breaths, or watching. </h1>
+                    <button className="buttonA" onClick={this.handleBack}>Back </button>
+                    <button className = "buttonA" onClick={this.handleClick}>Next</button>
                 </div>
             </div>
 

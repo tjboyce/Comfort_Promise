@@ -17,9 +17,9 @@ render () {
         <div id= "procedureDiv">
             <img src={xray_thumb_up} alt="handXray" id= "xray"  />
 
-            <div>
+            <div id = "feedback">
                 <h1>X-ray Procedure</h1>
-                <button onClick = {this.handleClick}>Start Procedure</button>
+                <button className="buttonA" onClick = {this.handleClick}>Start Procedure</button>
             </div>
         </div>
     

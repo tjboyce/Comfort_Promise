@@ -10,15 +10,18 @@ class IV5 extends Component {
     handleClick = () => {
         this.props.history.push('/procedure/iv6')
     }
+    handleBack = () => {
+        this.props.history.push('/procedure')
+    }
 
     render() {
         return (
-            <div>
-                <img src={cleaner} alt="two-iv-pic" width="100%" />
-                <div>
-                    <h1>IV third step</h1>
-                    <span> It is very important that your skin is clean when you get an IV. The cleaner feels cool on your skin and smells like hand sanitizer.</span>
-                    <button onClick={this.handleClick}>Next</button>
+            <div id = "procedureDiv">
+                <img src={cleaner} alt="two-iv-pic" />
+                <div id = "feedback">
+                    <h1>It is very important that your skin is clean when you get an IV. The cleaner feels cool on your skin and smells like hand sanitizer.</h1>
+                    <button className="buttonA" onClick={this.handleBack}>Back </button>
+                    <button className= "buttonA" onClick={this.handleClick}>Next</button>
                 </div>
             </div>
 

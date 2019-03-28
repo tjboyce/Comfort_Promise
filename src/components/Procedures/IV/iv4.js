@@ -10,16 +10,18 @@ class IV4 extends Component {
     handleClick = () => {
         this.props.history.push('/procedure/iv5')
     }
+    handleBack = () => {
+        this.props.history.push('/procedure')
+    }
 
     render() {
         return (
-            <div>
-                <img src={band} alt="two-iv-pic" width="100%" />
-                <div>
-                    <h1>IV </h1>
-                    <p>second step</p>
-                    <span>This tight band, a tourniquet, helps the nurse see your vein very well 💉 </span>
-                    <button onClick={this.handleClick}>Next</button>
+            <div id="procedureDiv">
+                <img src={band} alt="two-iv-pic"  />
+                <div id = "feedback">
+                    <h1>This tight band, a tourniquet, helps the nurse see your vein very well </h1>
+                    <button className="buttonA" onClick={this.handleBack}>Back </button>
+                    <button className = "buttonA" onClick={this.handleClick}>Next</button>
                 </div>
             </div>
 

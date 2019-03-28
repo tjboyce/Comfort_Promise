@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import hand from './hand.jpeg'
+import hand_iv from './hand_iv.jpg'
 import './Procedure.css'
 
 // This is one of our simplest components
@@ -14,62 +14,15 @@ class IV1 extends Component {
 
     render() {
         return (
-            <div style={{
-                background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${hand})`,
-                backgroundPosition:'center',
-                backgroundRepeat: 'no-repeat',
-                width: '100vw',
-                height: '100vh',
-                backgroundSize: 'cover',
-                position: 'absolute',
-            }}>
-                <div style={{
-                    margin: '40px auto',
-                    width: '80%',
-                }}>
-                    <div style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        marginBottom: '30px'
-                    }}>
-                        <span style={{
-                            color: 'white',
-                            opacity: '0.7',
-                            fontWeight: '200',
-                        }}>
-                            Welcome to
-                        </span>
-                        <span style={{
-                            color: 'white',
-                            fontWeight: 'bold',
-                            fontSize: '30px',
-                            fontStyle:'italic',
-                            fontFamily: 'serif'
-                        }}>
-                            IV
-                        </span>
-                        
-                    </div>
+            <div id="procedureDiv">
+                <img src={hand_iv} alt="hand" id="hand" />
 
-                    <div onClick={this.handleClick} style={{
-                        height: '50px',
-                        lineHeight: '50px',
-                        verticalAlign: 'middle',
-                        textAlign: 'center',
-                        fontSize: '15px',
-                        color: '#fff',
-                        backgroundColor: 'darkorange',
-                        margin: '0px auto',
-                        fontWeight: '300',
-                        borderRadius: '3px',
-                        cursor: 'pointer',
-                    }}>
-                        Start Procedure Preparation
-                    </div>
-
+                <div id="feedback">
+                    <h1>X-ray Procedure</h1>
+                    <button className="buttonA" onClick={this.handleClick}>Start Procedure</button>
                 </div>
             </div>
-
+           
         )
     }
 
@@ -77,3 +30,54 @@ class IV1 extends Component {
 }
 
 export default IV1;
+
+{/* <div style={{
+    background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${hand})`,
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    width: '100vw',
+    height: '100vh',
+    backgroundSize: 'cover',
+    position: 'absolute',
+}}>
+    <div style={{
+        margin: '40px auto',
+        width: '80%',
+    }}>
+        <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            marginBottom: '30px'
+        }}>
+            <span style={{
+                color: 'white',
+                opacity: '0.7',
+                fontWeight: '200',
+            }}>
+                Welcome to
+                        </span>
+            <span style={{
+                color: 'white',
+                fontWeight: 'bold',
+                fontSize: '30px',
+                fontStyle: 'italic',
+                fontFamily: 'serif'
+            }}>
+                IV
+                        </span>
+
+        </div>
+
+        <div onClick={this.handleClick} style={{
+            height: '50px',
+            lineHeight: '50px',
+            verticalAlign: 'middle',
+            textAlign: 'center',
+            fontSize: '15px',
+            color: '#fff',
+            backgroundColor: 'darkorange',
+            margin: '0px auto',
+            fontWeight: '300',
+            borderRadius: '3px',
+            cursor: 'pointer',
+        }}></div> */}

@@ -91,6 +91,9 @@ td{
     text-align: center;
     color: white; 
 }
+li{
+    list-style-type: none;
+}
 
 
 /* this is image css for procedures */

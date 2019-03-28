@@ -16,9 +16,9 @@ class Xray4 extends Component {
         return (
             <div id="procedureDiv">
                 <img src={xray4} alt="handXray"  />
-                <div>
+                <div id = "feedback">
                     <h1>When you are having an x-ray taken, sometimes kids wear a heavy apron over the part of the body that does not need a picture. </h1>
-                    <button onClick={this.handleClick}>Finish</button>
+                    <button className="buttonA" onClick={this.handleClick}>Finish</button>
                 </div>
             </div>
 

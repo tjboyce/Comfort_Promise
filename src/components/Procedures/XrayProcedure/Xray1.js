@@ -15,14 +15,14 @@ class Xray1 extends Component {
 
     render() {
         return (
-            <div id="procedureDiv">
+            <div id="feedback">
                
-                <img src={xray1} alt="handXray" />
-            
+                <img  src={xray1} alt="handXray" />
+
                     <h1>An x-ray is a picture of the inside of your body. Your bones show up really well in x-rays.</h1>
                     
-                <button onClick={this.handleBack}>Back to procedure home </button>
-                <button onClick={this.handleClick}>Next</button>
+                <button  className="buttonA" onClick={this.handleBack}>Back </button>
+                <button className="buttonA" onClick={this.handleClick}>Next</button>
                
             </div>
 

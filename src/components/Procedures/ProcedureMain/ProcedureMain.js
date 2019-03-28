@@ -7,27 +7,63 @@ import { Link } from 'react-router-dom';
 // or even care what the redux state is, so it doesn't need 'connect()'
 
 class ProcedureMain extends Component {
+    handleClick=()=>{
+        this.props.history.push('/procedure/xray')
+    }
+    handleIV = () => {
+        this.props.history.push('/procedure/IV')
+    }
+
     render() {
         return (
             <div>
-                <div>
-                    <h1>Procedures</h1>
-                    <ul>
-                        <li>
-                            <Link to="/procedure/xray">Xray</Link>
-                        </li>
-                        <li>
-                            <Link to="/procedure/IV">IV</Link>
-                        </li>
-                        <li>Stitches</li>
-                        <li>Lab Draw</li>
-                        <li>Surgery</li>
-                        <li>Ultrasound</li>
-                        <li>Flouro</li>
-                        <li>CT Scan </li>
-                        <li>MRI</li>
-                    </ul>
+                <div id="feedback">
+                    <h1>Procedure Preparation</h1>
+               
                 </div>
+
+                <div className="homeButtonDiv">
+
+                    <div className="button-div">
+                        <i class="fas fa-x-ray"></i>
+                        <button className="buttonA" onClick = {this.handleClick}>Xray</button>
+                    </div>
+
+                    <div className="button-div">
+                        <i class="fas fa-syringe"></i>
+                        <button className="buttonA" onClick = {this.handleIV}>IV</button>
+                    </div>
+
+                    <div className="button-div">
+                        <i class="fas fa-cut"></i>
+                        <button className="buttonA">Stitches</button>
+                    </div>
+                    <div className="button-div">
+                        <i class="fas fa-star-of-life"></i>
+                        <button className="buttonA">Lab Draw</button>
+                    </div>
+
+                    <div className="button-div">
+                        <i class="fas fa-user-md"></i>
+                        <button className="buttonA">Surgery</button>
+                    </div>
+
+                    <div className="button-div">
+                        <i class="fas fa-file-medical-alt"></i>
+                        <button className="buttonA">Ultrasound</button>
+                    </div>
+                    <div className="button-div">
+                        <i class="fas fa-briefcase-medical"></i>
+                        <button className="buttonA">CT Scan</button>
+                    </div>
+
+                    <div className="button-div">
+                        <i class="fas fa-laptop-medical"></i>
+                        <button className="buttonA">MRI</button>
+                    </div>
+
+                </div> 
+
             </div>
 
         )

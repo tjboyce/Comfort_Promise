@@ -10,17 +10,19 @@ class IV6 extends Component {
     handleClick = () => {
         this.props.history.push('/procedure/completed')
     }
+    handleBack = () => {
+        this.props.history.push('/procedure')
+    }
 
     render() {
         return (
-            <div>
-                <img src={ivinhand} alt="two-iv-pic" width="100%" />
-                <div>
-                    <h1>IV sixth step </h1>
-                    <span>After your IV is in, the nurse will check to make sure it is working well. Then they will 
-                        put tape on it to make sure it stays where it needs to. A blue wrap can help make sure your IV stays safe.
-                    </span>
-                    <button onClick={this.handleClick}>Next</button>
+            <div id= "procedureDiv">
+                <img src={ivinhand} alt="two-iv-pic" />
+                <div id= "feedback">
+                    <h1>After your IV is in, the nurse will check to make sure it is working well. Then they will 
+                        put tape on it to make sure it stays where it needs to. A blue wrap can help make sure your IV stays safe.</h1>
+                    <button className="buttonA" onClick={this.handleBack}>Back </button>
+                    <button className = "buttonA" onClick={this.handleClick}>Next</button>
                 </div>
             </div>
 

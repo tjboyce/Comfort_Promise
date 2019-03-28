@@ -1,9 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import LogOutButton from '../LogOutButton/LogOutButton';
-import Button from '@material-ui/core/Button'
-import { Link } from 'react-router-dom'
-import Resources from '../Resources/Resources';
+
 import './UserPage.css'
 
 

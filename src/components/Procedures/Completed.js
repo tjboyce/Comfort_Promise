@@ -15,9 +15,9 @@ class Completed extends Component {
         return (
             <div>
                 {/* <img src={xray4} alt="handXray" width="100%" /> */}
-                <div>
+                <div id = "feedback">
                     <h1>Procedure Complete</h1>
-                    <button onClick={this.handleClick}>Back to procedures list</button>
+                    <button className="buttonA" onClick={this.handleClick}>Back to procedures list</button>
                 </div>
             </div>
 

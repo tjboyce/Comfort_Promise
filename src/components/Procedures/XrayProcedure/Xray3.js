@@ -10,14 +10,18 @@ class Xray3 extends Component {
     handleClick = () => {
         this.props.history.push('/procedure/xray4')
     }
+    handleBack = () => {
+        this.props.history.push('/procedure')
+    }
 
     render() {
         return (
             <div id="procedureDiv">
                 <img src={xray3} alt="handXray"  />
-                <div>
+                <div id = "feedback">
                     <h1>The camera shines a light before the picture is taken. </h1>
-                    <button onClick={this.handleClick}>Next</button>
+                    <button className="buttonA" onClick={this.handleBack}>Back </button>
+                    <button className="buttonA" onClick={this.handleClick}>Next</button>
                 </div>
             </div>
 
