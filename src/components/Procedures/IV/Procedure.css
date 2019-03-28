@@ -1,3 +1,9 @@
 img {
+    margin-top: 60px;
     height: 400px;
+    border-radius: 24px;
+}
+
+.imageA {
+    border-radius: 20px;
 }

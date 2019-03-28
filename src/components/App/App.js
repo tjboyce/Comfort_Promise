@@ -28,6 +28,8 @@ import Xray1 from '../Procedures/XrayProcedure/Xray1';
 import Xray2 from '../Procedures/XrayProcedure/Xray2';
 import Xray3 from '../Procedures/XrayProcedure/Xray3';
 import Xray4 from '../Procedures/XrayProcedure/Xray4';
+import Xray5 from '../Procedures/XrayProcedure/xray5';
+
 import Completed from '../Procedures/Completed'
 //import iv procedure links
 import IV from '../Procedures/IV/IvProcedure'
@@ -118,15 +120,15 @@ class App extends Component {
               exact path='/procedure/xray4'
               component={Xray4} />
             <ProtectedRoute
+              exact path='/procedure/xray5'
+              component={Xray5} />
+            <ProtectedRoute
               exact path='/procedure/completed'
               component={Completed} />
             <ProtectedRoute
               exact path='/procedure/IV'
               component={IV} />
-            {/* // <ProtectedRoute */}
-            {/* //   exact path='/procedure/iv1'
-            //   component={IV1} /> */}
-            <ProtectedRoute
+           <ProtectedRoute
               exact path='/procedure/iv2'
               component={IV2} />
             <ProtectedRoute

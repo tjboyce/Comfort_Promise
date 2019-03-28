@@ -9,7 +9,10 @@ import xray4 from '../XrayProcedure/xray4.jpeg';
 
 class Xray4 extends Component {
     handleClick = () => {
-        this.props.history.push('/procedure/completed')
+        this.props.history.push('/procedure/xray5')
+    }
+    handleBack = () => {
+        this.props.history.push('/procedure')
     }
 
     render() {
@@ -18,7 +21,8 @@ class Xray4 extends Component {
                 <img src={xray4} alt="handXray"  />
                 <div id = "feedback">
                     <h1>When you are having an x-ray taken, sometimes kids wear a heavy apron over the part of the body that does not need a picture. </h1>
-                    <button className="buttonA" onClick={this.handleClick}>Finish</button>
+                    <button className="buttonA" onClick={this.handleBack}>Back </button>
+                    <button className="buttonA" onClick={this.handleClick}>Next</button>
                 </div>
             </div>
 

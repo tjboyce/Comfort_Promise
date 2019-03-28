@@ -9,6 +9,7 @@
     transition: all .3s; 
     border: none;  
     color: #157b85;
+    outline: none;
 }
 
 .buttonA:hover {

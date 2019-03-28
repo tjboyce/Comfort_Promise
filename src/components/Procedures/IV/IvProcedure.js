@@ -15,10 +15,10 @@ class IV1 extends Component {
     render() {
         return (
             <div id="procedureDiv">
-                <img src={hand_iv} alt="hand" id="hand" />
+                <img src={hand_iv} className= "imageA" alt="hand" id="hand" />
 
                 <div id="feedback">
-                    <h1>X-ray Procedure</h1>
+                    <h1>IV Procedure</h1>
                     <button className="buttonA" onClick={this.handleClick}>Start Procedure</button>
                 </div>
             </div>

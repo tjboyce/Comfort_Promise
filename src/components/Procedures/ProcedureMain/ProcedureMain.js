@@ -53,7 +53,7 @@ class ProcedureMain extends Component {
                         <button className="buttonA">Ultrasound</button>
                     </div>
                     <div className="button-div">
-                        <i class="fas fa-briefcase-medical"></i>
+                        <i class="fas fa-radiation"></i>
                         <button className="buttonA">CT Scan</button>
                     </div>
 

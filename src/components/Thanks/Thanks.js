@@ -12,7 +12,7 @@ class Thanks extends Component {
             return (
             <div>
            
-                <h3 className = "thanks">Thank you for your feedback!</h3>
+                <h1 id ="feedback"className = "thanks">Thank you for your feedback!</h1>
 
             </div>
 
