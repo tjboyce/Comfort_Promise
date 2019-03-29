@@ -2,20 +2,22 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
-// import Button from '@material-ui/core/Button'
+
 import './Nav.css';
-import stars from '../Nav/stars.jpeg'
+import Nav2 from  './Nav2';
+
 const Nav = (props) => (
 
 
      <div className="nav">
+     <Nav2 />
 
   
   
-   
+  
       <div>
-        {/* <img src={stars} alt="background-image" className="background-image" width="100%" height /> */}
-  <Link to="/home">
+     
+    <Link to="/home">
         <h2 className="nav-title"><i class="fas fa-child"></i>  Comfort Promise</h2>
         </Link>
     <div className="nav-left">
@@ -39,7 +41,7 @@ const Nav = (props) => (
             Admin
           </Link>
           <Link className="nav-link" to="/age">
-            Age 
+            Resources
           </Link>
           <Link className="nav-link" to="/procedure" > Procedure</Link>
           <LogOutButton className="nav-link"/>

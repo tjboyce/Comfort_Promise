@@ -9,6 +9,7 @@ import {connect} from 'react-redux';
 
 import Nav from '../Nav/Nav';
 
+
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 
 import AboutPage from '../AboutPage/AboutPage';
@@ -22,6 +23,7 @@ import XrayProcedure from '../Procedures/XrayProcedure/XrayProcedure'
 import './App.css';
 import Admin2 from '../Admin/Admin2';
 import ProcedureMain from '../Procedures/ProcedureMain/ProcedureMain';
+
 
 //import xray procedure links
 import Xray1 from '../Procedures/XrayProcedure/Xray1';

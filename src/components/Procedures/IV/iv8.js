@@ -22,7 +22,7 @@ class IV6 extends Component {
                     <h1>After your IV is in, the nurse will check to make sure it is working well. Then they will 
                         put tape on it to make sure it stays where it needs to. A blue wrap can help make sure your IV stays safe.</h1>
                     <button className="buttonA" onClick={this.handleBack}>Back </button>
-                    <button className = "buttonA" onClick={this.handleClick}>Next</button>
+                    <button className = "buttonA" onClick={this.handleClick}>Finish</button>
                 </div>
             </div>
 
