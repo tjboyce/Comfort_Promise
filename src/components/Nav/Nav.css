@@ -3,6 +3,7 @@
     /* font-weight: 700; */
     display: inline-block;
     color: #f2f2f2;
+   
     padding-left: 0px;
     padding-right: 600px;
     margin-left: 80px;
@@ -12,23 +13,26 @@
    font-style: bold;
   
 }
-
-.nav {
+/* change this back and nav-link */
+.nav { 
   overflow: hidden;
      /* background: -webkit-linear-gradient(left, #25c481, #25b7c4);
     background: linear-gradient(to right, #25c481, #25b7c4); */
-  background-color: #25c481;
+  /* background-color: #25c481; */
   text-align: center;
+  background-color: #0277bd;
+ 
 }
 
 .nav-link {
   float: left;
   color: #f2f2f2;
-  background-color: #25c481;
+  background-color:#0277bd;
   text-align: center;
   padding: 24px 10px;
   text-decoration: none;
   font-size: 18px;
+  
 
   /* these last two make the logout button in
   the nav bar look like another link */
