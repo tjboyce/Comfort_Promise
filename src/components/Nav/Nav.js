@@ -29,25 +29,29 @@ const Nav = (props) => (
         {props.user.id ? 'Home' : 'Login / Register'}
       </Link>
       {/* Show the link to the info page and the logout button if the user is logged in */}
-      {props.user.id && (
+      {props.user.id >= 6 && (
         <>
-          {/* <Link className="nav-link" to="/info">
-            Resources
-          </Link> */}
-          <Link className="nav-link" to="/feedback">
-            Feedback
-          </Link>
-          <Link className="nav-link" to="/admin">
-            Admin
-          </Link>
+          
           <Link className="nav-link" to="/age">
             Resources
           </Link>
           <Link className="nav-link" to="/procedure" > Procedure</Link>
+            <Link className="nav-link" to="/feedback">
+              Feedback
+          </Link>
           <LogOutButton className="nav-link"/>
           
         </>
       )}
+
+        {props.user.id === 5 && (
+          <>
+        <Link className="nav-link" to="/admin">
+          Admin
+          </Link>
+          <LogOutButton className="nav-link" />
+          </>
+        )}
       {/* Always show this link since the about page is not protected */}
       <Link className="nav-link" to="/about">
         About

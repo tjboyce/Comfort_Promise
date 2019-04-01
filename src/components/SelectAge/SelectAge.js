@@ -47,6 +47,8 @@ class SelectAge extends Component {
     render() {
         console.log('TONY', this.state.selection)
         const { classes } = this.props;
+        console.log('kibret',this.props.projectReducer)
+        
 
 
 
@@ -93,21 +95,20 @@ class SelectAge extends Component {
                                 <iframe className="videoDiv" key={item.id} src={item.video} title="infant video" />
                                 <ul>
                                     <li>{item.resource1}</li>
+                                    
                                     <li>{item.resource2}</li>
+                                  
                                     <li>{item.resource3}</li>
+                                    
                                     <li>{item.resource4}</li>
+                                   
                                     <li>{item.resource5}</li>
                                 </ul>
                             </div>
                         </>
                     )}
                 </div>
-                {/* <div> 
-                    <button className = "buttonA" onClick = {this.handleFeedback}>Leave Feedback</button>
-                </div> */}
-
-
-                {/* </div> */}
+           
             </>
         )
     }

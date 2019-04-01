@@ -24,7 +24,7 @@ class Resources extends Component {
 
 
   render(){
-    console.log('test:', this.props.projectReducer);
+    console.log('KIBRET:', this.props.projectReducer);
     
     return(
       <>
